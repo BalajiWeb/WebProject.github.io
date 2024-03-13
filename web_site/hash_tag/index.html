@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hash_Conveter1</title>
+  <style type="text/css">
+    body {
+      display: grid;
+      background-image: url("universe.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      /*color: #FFD3B0; */
+      max-width: 500px;
+      margin: auto;
+      margin-top: 200px;
+    }
+    @media only screen and (min-width:600px) {
+        .main 
+        {
+            width: 860px;
+            height: 800px;
+        }
+        
+    }
+
+    button {
+      display: inline-block;
+      background-color: #8c4be7;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 100px 100px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    h1 {
+      color: bisque;
+      font-size: 50px;
+      /* make underline of h1 text */
+      text-shadow: 4px 4px 4px slateblue;
+      text-align: center; /* Align text in the center horizontally */
+      margin-top: 0; /* Remove any default margin */
+      margin-bottom: 20px; /* Example: Add some bottom margin for spacing */
+    
+    }
+
+    input {
+      border: 3px solid black;
+      padding: 30px;
+      width: 500px;
+      height: 80px;
+      border-radius: 100px 100px  100px;
+    }
+    * {
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<script type="text/javascript">
+function myFunction() {
+    // check if the id is matches
+    let input = document.getElementById('inputID');
+    let output = document.getElementById('outputID');
+
+    // make include hashtag in string
+    const text = input.value;
+    const words = text.split(" ");
+    const hashes = words.map(word => '#' + word);
+
+   
+    var opt =  output.innerHTML = hashes.join(" ");
+  }
+  function buttonC()
+  {
+    var outputText = document.getElementById("inputID");
+    var userOutput = document.getElementById("outputID");
+
+    // Create a temporary textarea element
+    var tempTextArea = document.createElement('textarea');
+    var range = document.createRange();
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    window.getSelection().removeAllRanges(); 
+
+    tempTextArea.value = userOutput.innerText; // Add '#' before the text
+    document.body.appendChild(tempTextArea);
+    range.selectNode(outputText);
+    // Select the text in the textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+
+    // Provide visual feedback to the user
+    copyButton.textContent = 'Copied!';
+      setTimeout(function() {
+        copyButton.textContent = 'Copy';
+      }, 2000);
+  }
+  
+</script>
+
+<body class="main">
+  
+  <p id="p1">
+    <h1 style="text-shadow: 4px 4px 8px lightblue; text-align: justify;">#Hashtag Generator</h1>
+
+    <!-- when button click the myFunction() is call -->
+    <input id="inputID" id="text" class="inputtag" placeholder="By balaji dev"></input><br><br>
+    <button class="button" onclick="myFunction('inputID')">Submit</button>
+    <h1 id="outputID"></h1>
+    <button  id="button" onclick="buttonC()">Copy</button>
+  </p>
+
+</body>
+</html>

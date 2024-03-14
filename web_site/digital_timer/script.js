@@ -4,7 +4,7 @@ function displayTime()
 {
     // create object for date time 
     let dateTime = new Date();
-    let hr = dateTime.getHours();
+    let hr = padZero(dateTime.getHours());
     let min = dateTime.getMinutes();
     let sec = dateTime.getSeconds();
     // date property of js 

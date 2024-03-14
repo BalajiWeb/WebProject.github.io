@@ -6,7 +6,7 @@ function displayTime()
     let dateTime = new Date();
     let hr = padZero(dateTime.getHours());
     let min = dateTime.getMinutes();
-    let sec = dateTime.getSeconds();
+    let sec = padZero(dateTime.getSeconds());
     // date property of js 
     let dd = dateTime.getDate();
     let mm = dateTime.getMonth()+1;

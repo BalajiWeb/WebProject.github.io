@@ -17,9 +17,9 @@ function displayTime()
         hr = hr - 12
         ampm.innerHTML = 'PM'
     }
-    document.getElementById('hour').innerHTML = padZero(hr)
-    document.getElementById('minute').innerHTML = padZero(min)
-    document.getElementById('secound').innerHTML = padZero(sec)
+    document.getElementById('hour').innerHTML = hr
+    document.getElementById('minute').innerHTML = min
+    document.getElementById('secound').innerHTML = sec
     document.getElementById('day').innerHTML = addZero(dd);
     document.getElementById('month').innerHTML = addZero(mm);
     document.getElementById('year').innerHTML = yyyy;
